@@ -199,3 +199,31 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
+--- Free world makers exception 1.0.0 to the Apache 2.0 License ----
+
+   The License is only granted when the following additional conditions are met:
+
+   C1. The License defined in the Apache 2.0 License is amended by these "Free
+       world makers exceptions" (and hence also applies to Contributions).
+
+   C2. You may only use, reproduce and distribute the Source or Object in
+       countries with a "Global Freedom Score" of 70 or higher according to
+       the latest report from Freedom House (https://freedomhouse.org/).
+
+   C3. Commercial activity based on this Source or Object is only permitted
+       when use (including use over networks) of the Source or Object is
+       internal to You and operated by Your own employees.
+
+   The following restrictions apply to the original License:
+
+   E1. The Grant of Patent License in section 3 of the License only applies to
+       the Source under the Licensors control and the Source's dependencies
+       covered by the Apache-2.0 license.
+
+   Dead-man's vigilance device and archaeology permission:
+
+   D1. If the Licensor no longer exists or more than 10 years has passed since
+       the Source was maintained, the "Free world makers exceptions" is no
+       longer valid and the License reverts to a pure BSD-3-Clause license.

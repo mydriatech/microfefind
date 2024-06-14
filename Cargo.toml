@@ -1,0 +1,45 @@
+[package]
+name = "microfefind"
+version = "0.1.0"
+edition = "2021"
+description = "Micro front end discovery on Kubernetes"
+license = "Apache-2.0 WITH FWM-Exception-1.0.0"
+resolver = "2"
+
+[profile.release]
+opt-level = 3
+#strip = "debuginfo"
+strip = "symbols"
+lto = "fat"
+panic = 'abort'
+codegen-units = 1
+# For profiling
+#debug = 1
+# Keep debug!() and trace!()
+#debug-logging=true
+
+[dependencies]
+# Async and concurrency
+crossbeam-skiplist = { version = "0.1", default-features = true }
+futures = { version = "0.3", default-features = false, features = ["std", "async-await"] }
+futures-util = { version = "0.3", default-features = false, features = ["std", "async-await"] }
+tokio = { version = "1", default-features = false, features = ["rt-multi-thread", "macros", "signal"] }
+tokio-stream = { version = "0.1", default-features = false, features = ["signal"] }
+
+# REST API
+actix-web = { version = "4.6", default-features = false, features = ["macros", "http2", "compress-brotli"] }
+utoipa = { version = "3", features = ["actix_extras"] }
+serde = { version = "1.0", default-features = false, features = ["std"] }
+serde_json = "1.0"
+
+# Config and platform info
+config = { version = "0.14", default-features = false, features = ["json"] }
+cgroups-rs = "0.3"
+
+# Logging
+log = { version = "0.4", default-features = false, features = ["release_max_level_debug"] }
+env_logger = { version = "0.11.1", default-features = false, features = [] }
+
+# Kubernetes API client https://github.com/kube-rs/kube
+kube = { version = "0.91.0", features = ["runtime"] }
+k8s-openapi = { version = "0.22.0", features = ["latest"] }

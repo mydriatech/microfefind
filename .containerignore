@@ -1,0 +1,10 @@
+# Avoid the following files when building a container from this dir
+
+# Exclude all subdir content...
+*/*
+# ...except for scripts and source code.
+!bin/
+!src/
+
+# Allow development build to package locally built binary
+!target/x86_64-unknown-linux-musl/debug/microfefind

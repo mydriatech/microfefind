@@ -14,3 +14,7 @@ Cargo.lock
 *.pdb
 
 .project
+
+# Ignore not yet released parts
+charts/
+development/
