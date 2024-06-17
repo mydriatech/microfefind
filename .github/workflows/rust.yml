@@ -1,0 +1,61 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      run: cargo build --verbose
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run tests
+      run: cargo test --verbose
+
+  # Use with #![warn(missing_docs)] to enforce full doc
+  doc:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build full doc
+      run: cargo doc --document-private-items --no-deps
+
+  nit:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Check coding guidelines
+      run: cargo clippy -- -D warnings
+    - name: Check code formatting
+      run: cargo fmt --check
+
+  sbom:
+    needs:
+      - test
+      - doc
+      - nit
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Only approved licenses in SBOM
+      uses: EmbarkStudios/cargo-deny-action@v1
+      with:
+        command: check licenses
+    - name: Check for known vulnerabilities
+      run: cargo audit

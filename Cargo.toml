@@ -1,6 +1,8 @@
 [package]
 name = "microfefind"
-version = "0.1.0"
+# Dynamically set at build time with env.CARGO_PKG_VERSION_OVERRIDE in build.rs.
+version = "0.0.0"
+publish = false
 edition = "2021"
 description = "Micro front end discovery on Kubernetes"
 license = "Apache-2.0 WITH FWM-Exception-1.0.0"
