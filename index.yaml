@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  microfefind:
+  - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2024-06-17T14:44:12.401622391Z"
+    description: Micro front end discovery on Kubernetes
+    digest: 2c27cfa2f1bdf54594ad49c5b08439aca34ded951c2c0f8fc01ce11457d52e21
+    home: https://github.com/mydriatech/microfefind
+    name: microfefind
+    type: application
+    urls:
+    - https://github.com/mydriatech/microfefind/releases/download/microfefind-0.1.2/microfefind-0.1.2.tgz
+    version: 0.1.2
+generated: "2024-06-17T14:44:12.401629774Z"
