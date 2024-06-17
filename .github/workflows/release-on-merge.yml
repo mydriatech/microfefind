@@ -142,6 +142,7 @@ jobs:
       - release-container
     permissions:
       contents: write
+      packages: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
