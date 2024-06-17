@@ -39,7 +39,7 @@ Once Helm has been set up correctly, add the repo as follows:
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
 the latest versions of the packages.  You can then run `helm search repo
-<alias>` to see the charts.
+mt-microfefind` to see the charts.
 
 Override default settings from the [default values.yaml](charts/microfefind/values.yaml) in `microfefind-values.yaml`.
 
@@ -47,12 +47,12 @@ To install the <chart-name> chart:
 
     helm upgrade --install --atomic --create-namespace \
         --namespace microfens \
-        --values microfefind-values.yaml \
-        my-<chart-name> mt-microfefind/<chart-name>
+        --values webapp1-microfefind-values.yaml \
+        webapp1-microfefind mt-microfefind/microfefind
 
 To uninstall the chart:
 
-    helm delete --namespace microfens my-<chart-name>
+    helm delete --namespace microfens webapp1-microfefind
 
 
 ### Usage notes for main front end team and architects
