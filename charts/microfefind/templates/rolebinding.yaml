@@ -1,0 +1,14 @@
+# Granting the SA account view access for the namespace
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "microfefind.serviceAccountName" . }}-sa-view
+  #namespace: microfefind
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+- kind: ServiceAccount
+  name: {{ include "microfefind.serviceAccountName" . }}
+  namespace: {{ .Release.Namespace }}

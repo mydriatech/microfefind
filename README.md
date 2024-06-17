@@ -28,6 +28,33 @@ This project is agnostic to the frameworks used for the main front end (FE) or t
 
 ## Usage
 
+### Installation using Helm
+
+[Helm](https://helm.sh) must be installed to use the charts.  Please refer to
+Helm's [documentation](https://helm.sh/docs) to get started.
+
+Once Helm has been set up correctly, add the repo as follows:
+
+    helm repo add <alias> https://mydriatech.github.io/microfefind
+
+If you had already added this repo earlier, run `helm repo update` to retrieve
+the latest versions of the packages.  You can then run `helm search repo
+<alias>` to see the charts.
+
+Override default settings from the [default values.yaml](charts/microfefind/values.yaml) in `microfefind-values.yaml`.
+
+To install the <chart-name> chart:
+
+    helm upgrade --install --atomic --create-namespace \
+        --namespace microfens \
+        --values microfefind-values.yaml \
+        my-<chart-name> <alias>/<chart-name>
+
+To uninstall the chart:
+
+    helm delete --namespace microfens my-<chart-name>
+
+
 ### Usage notes for main front end team and architects
 
 Dynamic front end discovery can help scale your organization towards continuous delivery (CD), but each client will make network calls proportional to the number of µFEs.

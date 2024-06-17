@@ -16,5 +16,4 @@ Cargo.lock
 .project
 
 # Ignore not yet released parts
-charts/
 development/

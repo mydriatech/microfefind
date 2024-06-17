@@ -1,0 +1,7 @@
+apiVersion: v2
+name: microfefind
+description: Micro front end discovery on Kubernetes
+type: application
+home: https://github.com/mydriatech/microfefind
+version: 0.0.0
+appVersion: "0.0.0"
