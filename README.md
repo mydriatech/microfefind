@@ -70,7 +70,7 @@ OpenAPI documentation is available at `/api/v1/openapi.json`.
 Even if this enables decoupling of team releases and enables more agile continuous delivery, you still need to ensure that design and user experience (UX) is coherent for the application.
 You also need to establish a contract/convention where µFEs declare what they provide and establish how the in browser message passing between components should be achieved.
 
-To allow a development team to support µFEs for multiple application in the same `Namespace`, change the default label selection `MICROFEFIND_INGRESSFILTER_MATCHLABELS` to include additional qualifying labels like target web app and/or environment. Do  __not__  use this to filter out features based on entitlements or region, since this will only hide exposed services and will not replace authorization checks in each µFE.
+To allow a development team to support µFEs for multiple application in the same `Namespace`, change the default label selection `MICROFEFIND_INGRESS_LABELS` to include additional qualifying labels like target web app and/or environment. Do  __not__  use this to filter out features based on entitlements or region, since this will only hide exposed services and will not replace authorization checks in each µFE.
 
 
 ### Usage notes for µFE teams
